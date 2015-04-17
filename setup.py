@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='django-buster',
     version = '0.0.1',
-    description='A simple utility to use busters.json from gulp-buster with Django',
+    description='A simple utility for integrating gulp-buster with Django',
     author='Eric Bartels',
     author_email='ebartels@gmail.com',
     license='BSD',
