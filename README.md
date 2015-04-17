@@ -1,6 +1,6 @@
 # django-buster
 
-A simple Django utility for adding cache busters to static assets. This project is meant as a companion to use along with [gulp-buster](https://www.npmjs.org/package/gulp-buster). You can use gulp-buster as part of your build process to generate a busters.json file, and use django-buster from within your Django templates to read the file and append the hashes to your static asset urls.
+A simple Django utility for adding cache busters to static assets. This project is meant as a companion to use alongside [gulp-buster](https://www.npmjs.org/package/gulp-buster). You can use gulp-buster as part of your build process to generate a busters.json file, and use django-buster from within your Django templates to read the file and append the hashes to your static asset urls.
 
 ## Generating a busters.json file
 If building your static assets with gulp, you may use gulp-buster to save a hash for each of your static assets. You must configure your gulpfile to output a busters.json using gulp-buster. This file will contain a mapping of each file path to its hash. A busters.json file might look like the following:
@@ -18,7 +18,7 @@ See the [gulp-buster](https://www.npmjs.org/package/gulp-buster) project for mor
 
 ## Integrating with Django
 
-In your Django templates, use the `buster` templatetag to append a cachebuster querystring to your asset urls. For example:
+In your Django templates, use the `{% buster %}` templatetag to append a cachebuster querystring to your asset urls. For example:
 
 ```
 <link rel="stylesheet" href="{% buster %}{% static "dist/styles.css" %}{% endbuster %}" type="text/css" />
