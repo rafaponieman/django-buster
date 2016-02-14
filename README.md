@@ -42,9 +42,9 @@ Upon rendering a template, the `buster` template will read the busters.json usin
 
 Because django-buster caches the busters.json file, a management command is provided to re-read the file. It is advised to run this command as part of your deployment process.
 
-`manage.py reload`: will re-read the busters.json file and re-cache its contents. Run this after deploying static assets.
+`manage.py buster reload`: will re-read the busters.json file and re-cache its contents. Run this after deploying static assets.
 
-`manage.py clear`: will clear the cached version of the busters.json file.
+`manage.py buster clear`: will clear the cached version of the busters.json file.
 
 ## Settings
 
