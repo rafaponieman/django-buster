@@ -39,7 +39,7 @@ def get_buster_json(buster_file=BUSTER_FILE):
     # Look for busters file in staticfiles storage
     buster_json = ''
     if staticfiles_storage.exists(buster_file):
-        with staticfiles_storage.open(buster_file) as file_:
+        with staticfiles_storage.open(buster_file, 'r') as file_:
             contents = file_.read()
             file_.flush()
 
