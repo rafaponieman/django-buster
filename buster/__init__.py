@@ -17,6 +17,7 @@ import re
 import json
 
 from django.core.cache import cache
+from django.contrib.staticfiles import finders
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.conf import settings
 
@@ -37,9 +38,9 @@ def get_buster_json(buster_file=BUSTER_FILE):
         return buster_json
 
     # Look for busters file in staticfiles storage
-    buster_json = ''
-    if staticfiles_storage.exists(buster_file):
-        with staticfiles_storage.open(buster_file, 'r') as file_:
+    buster_json = finders.find(buster_file)
+    if buster_json:
+        with open(buster_json, 'r') as file_:
             contents = file_.read()
             file_.flush()
 
